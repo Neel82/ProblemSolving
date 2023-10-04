@@ -72,5 +72,7 @@ public final class NTPClient{
 
         System.out.println(" Roundtrip delay(ms)=" + delay + ", clock offset(ms)=" + offset); // offset in ms
 
+        //need to use jna solution to update the system date in windows or kernel32.dll in windows
+
     }
 }
