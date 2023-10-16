@@ -16,7 +16,7 @@ class WordDictionary {
                 node.children[word.charAt(i)-'a'] = new TrieNode();
             }
             //find the child and assign as the next node to check
-            node = node.children[word.charAt(i)-'a']
+            node = node.children[word.charAt(i)-'a'];
         }
         //after the word gets added,then mark it as a word
         node.isWord = true;
