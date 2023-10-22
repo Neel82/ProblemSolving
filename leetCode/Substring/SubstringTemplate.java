@@ -15,6 +15,7 @@ public static String minWindowHash(String s, String t) {
 
     // we want to know both which characters are missing, and how many of them are missing in the current
     // window. To monitor this we use a hashmap. Keys are unique characters in t, and values are their occurrences
+    
     Map<Character, Integer> map = new HashMap<>();
     for (char c : t.toCharArray()) {
         map.put(c, map.getOrDefault(c, 0)+1);
