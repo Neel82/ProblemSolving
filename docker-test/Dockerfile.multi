@@ -1,0 +1,23 @@
+# ——— Build/Test image ——————————————————————————————————————————————————————
+# Name the builder image "as builder"
+FROM openjdk:11.0.5-jdk as builder
+
+WORKDIR /code
+COPY *.gradle gradle.* gradlew ./
+COPY gradle ./gradle
+RUN ./gradlew build || return 0
+
+COPY src/ src/
+
+# Alternatively ...
+# RUN ./gradlew resolveDependencies
+RUN ["./gradlew", "-q", "--no-daemon"]
+
+# ——— Final production image ————————————————————————————————————————————————
+FROM openjdk:11.0.5-jre
+
+COPY --from=builder /code/build/libs/docker-olp-0.0.1-SNAPSHOT.jar /var/docker-olp-0.0.1-SNAPSHOT.jar
+
+COPY entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["entrypoint.sh"]
+CMD ["default"]

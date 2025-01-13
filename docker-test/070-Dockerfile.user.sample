@@ -1,0 +1,6 @@
+FROM ubuntu:20.10
+
+# Do
+RUN groupadd -r app \
+  && useradd -r -g app appuser
+USER appuser

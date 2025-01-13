@@ -1,0 +1,11 @@
+FROM openjdk:11-jre
+
+# Avoid
+HEALTHCHECK CMD curl --fail http://localhost:8080/actuator/health || exit 1
+
+# Do
+COPY healthcheck.jar ./healthcheck.jar
+HEALTHCHECK --interval=1s \
+  --timeout=1s \
+  --start-period=2s \
+  --retries=3 CMD [ "java", "-jar", "healthcheck.jar", "http://localhost:8080/actuator/health]

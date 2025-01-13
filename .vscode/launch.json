@@ -1,0 +1,36 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "TestNStairs",
+            "request": "launch",
+            "mainClass": "leetCode.DynamicPrograming.TestNStairs",
+            "projectName": "CodingProblems_b8d49c16"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "RedisServerTest.redisdemo.src.main.java.com.neel.redisserver.Main",
+            "projectName": "CodingProblems_b8d49c16"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "NTPClient",
+            "request": "launch",
+            "mainClass": "NTPClientForSynch.NTPClient",
+            "projectName": "CodingProblems_b8d49c16",
+            "args": "time.google.com"
+        }
+    ]
+}

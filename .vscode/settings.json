@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "ExternalJars/commons-net-3.9.0/commons-net-3.9.0.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}
